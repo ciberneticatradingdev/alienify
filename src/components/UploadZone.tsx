@@ -89,6 +89,10 @@ export default function UploadZone({ onUpload }: UploadZoneProps) {
                         rounded-xl text-[var(--alien-accent)] font-semibold">
           Choose Photo
         </div>
+
+        <p className="text-yellow-500/70 text-xs mt-2">
+          ⚠️ Photos of famous people (politicians, celebrities) may be blocked by AI content filters
+        </p>
       </div>
     </div>
   );
