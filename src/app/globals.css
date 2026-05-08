@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --alien-green: #39FF14;
+  --alien-dark: #0D1B0E;
+  --alien-accent: #00FF41;
+  --alien-purple: #7B2FBE;
+  --alien-cyan: #00FFFF;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--alien-green);
+  border-radius: 4px;
+}
+
+/* Upload zone animations */
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(57, 255, 20, 0.4); }
+  50% { border-color: rgba(0, 255, 65, 0.8); }
+}
+
+@keyframes alien-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-18px) scale(1.05); }
+  50% { transform: translateY(-8px) scale(1); }
+  75% { transform: translateY(-22px) scale(0.97); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.upload-zone-idle {
+  animation: pulse-border 3s ease-in-out infinite;
+}
+
+.alien-float {
+  animation: alien-float 2s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--alien-accent), var(--alien-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+}
