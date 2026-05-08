@@ -9,13 +9,15 @@ const samples = [
 
 export default function Gallery() {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-16">
+    <section className="max-w-6xl mx-auto px-4 py-16 relative">
+      {/* Subtle nebula behind gallery */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[radial-gradient(ellipse,rgba(0,255,255,0.06)_0%,transparent_60%)] blur-2xl pointer-events-none" />
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-black gradient-text mb-4">
           Hall of Aliens
         </h2>
         <p className="text-gray-400 text-lg">
-          Previous abductees — er, satisfied subjects
+          Previous abductees - er, satisfied subjects
         </p>
       </div>
 
@@ -35,9 +37,9 @@ export default function Gallery() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent
                             opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100
+            <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 
                             transition-opacity duration-300">
-              <span className="text-sm font-semibold text-white">👽 Alienified #{i + 1}</span>
+              <span className="text-sm font-semibold text-[var(--alien-accent)] glow-text">👽 Alienified #{i + 1}</span>
             </div>
           </div>
         ))}

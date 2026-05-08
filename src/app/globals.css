@@ -14,6 +14,52 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Deep space background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(123, 47, 190, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 255, 65, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 60% 80%, rgba(0, 255, 255, 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse at 10% 90%, rgba(123, 47, 190, 0.1) 0%, transparent 40%),
+    linear-gradient(180deg, #020810 0%, #0a0a0a 30%, #060d12 60%, #0a0512 100%);
+}
+
+/* Twinkling stars layer */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 10%, rgba(0,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 55%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 45%, rgba(57,255,20,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 65%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 80%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 40%, rgba(0,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 70%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 85%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 5% 45%, rgba(123,47,190,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 90%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 60%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 95%, rgba(0,255,65,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 95% 70%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 5%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 75%, rgba(0,255,255,0.3) 0%, transparent 100%);
+  animation: twinkle 8s ease-in-out infinite alternate;
 }
 
 /* Custom scrollbar */
@@ -46,6 +92,18 @@ body {
   to { transform: rotate(360deg); }
 }
 
+@keyframes twinkle {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes nebula-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20px, 10px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
 .upload-zone-idle {
   animation: pulse-border 3s ease-in-out infinite;
 }
@@ -68,7 +126,17 @@ body {
 
 /* Glass effect */
 .glass {
-  background: rgba(30, 30, 30, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(57, 255, 20, 0.2);
+  background: rgba(10, 15, 20, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.03);
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.2), 0 0 40px rgba(57, 255, 20, 0.05);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.4), 0 0 30px rgba(57, 255, 20, 0.1);
 }

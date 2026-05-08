@@ -96,8 +96,8 @@ export default function Home() {
       <Gallery />
 
       {/* Footer */}
-      <footer className="text-center py-8 text-gray-500 text-sm border-t border-gray-800">
-        <p>ALIENIFY 👽 — No aliens were harmed in the making of this app</p>
+      <footer className="text-center py-8 text-gray-500 text-sm border-t border-[var(--alien-green)]/10">
+        <p>ALIENIFY <span className="text-[var(--alien-accent)]">👽</span> — No aliens were harmed in the making of this app</p>
         <p className="mt-1">Powered by AI & intergalactic technology</p>
       </footer>
     </main>

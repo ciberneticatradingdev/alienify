@@ -1,8 +1,8 @@
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-20 px-4">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--alien-dark)] via-transparent to-transparent opacity-60" />
+    <section className="relative overflow-hidden py-24 px-4">
+      {/* Nebula glow behind hero */}
+      <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[radial-gradient(ellipse,rgba(123,47,190,0.12)_0%,rgba(0,255,65,0.04)_40%,transparent_70%)] blur-3xl pointer-events-none" />
 
       <div className="relative max-w-4xl mx-auto text-center space-y-6">
         {/* Logo / Title */}
@@ -10,7 +10,7 @@ export default function Hero() {
           <h1 className="text-7xl md:text-9xl font-black tracking-tighter gradient-text">
             ALIENIFY
           </h1>
-          <div className="text-5xl md:text-7xl">👽</div>
+          <div className="text-5xl md:text-7xl alien-float">👽</div>
         </div>
 
         {/* Tagline */}
@@ -33,9 +33,9 @@ export default function Hero() {
         {/* Stats */}
         <div className="flex justify-center gap-8 pt-4 text-gray-500 text-sm">
           <span>100% Alien Guarantee</span>
-          <span>•</span>
+          <span className="text-[var(--alien-green)] opacity-40">✦</span>
           <span>No Humans Left Behind</span>
-          <span>•</span>
+          <span className="text-[var(--alien-green)] opacity-40">✦</span>
           <span>Probe Approved</span>
         </div>
       </div>
